@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Menu</layout>
+        <layout active="1" order="2">Level1</layout>
+        <event-sheet order="1">Level1Sheet</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Nazwa/" />
+        <folder expanded="1" path="animation-folder/Button_Start/" />
+        <folder expanded="1" path="animation-folder/Level1_button/" />
+        <folder expanded="1" path="animation-folder/WALL/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/Senzu/" />
+        <folder expanded="1" path="animation-folder/Chmurka_solid/" />
+        <folder expanded="1" path="animation-folder/Player_ball/" />
+        <folder expanded="1" path="animation-folder/Kameha/" />
+        <folder expanded="1" path="animation-folder/Explode_small/" />
+        <folder expanded="1" path="animation-folder/Explode_big/" />
+        <folder expanded="1" path="animation-folder/Chmurka_kinto/" />
+        <folder expanded="1" path="animation-folder/WALL_2/" />
+        <folder expanded="1" path="animation-folder/Chmurka_hide/" />
+        <folder expanded="1" path="animation-folder/Turret/" />
+        <folder expanded="1" path="animation-folder/Turret_bullet/" />
+        <folder expanded="1" path="animation-folder/Life/" />
+        <folder expanded="1" path="animation-folder/KI/" />
+        <folder expanded="1" path="animation-folder/Ladder/" />
+        <folder expanded="1" path="animation-folder/SnailEnemy/" />
+        <folder expanded="1" path="animation-folder/Edge_marker/" />
+        <folder expanded="1" path="animation-folder/Enemy/" />
+        <folder expanded="1" path="animation-folder/WALL_3/" />
+        <folder expanded="1" path="animation-folder/Enemy_ball/" />
+        <folder expanded="1" path="animation-folder/Edge_marker2/" />
+        <folder expanded="1" path="animation-folder/Lock/" />
+        <folder expanded="1" path="animation-folder/Level3_button/" />
+        <folder expanded="1" path="animation-folder/Lock_1/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+    </folders-expanded>
+</c2uistate>
