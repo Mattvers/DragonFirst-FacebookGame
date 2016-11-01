@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuSheet</name>
+    <events>
+        <event-group description="" sid="6336947377324331" title="Menu główne">
+            <sub-events>
+                <comment>Zmiana animacji przycisku gdy wciśniemy LPM;</comment>
+                <event-block sid="4223011103187654">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="8635733783974528" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Button_Start</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6709472005924843" type="Button_Start">
+                            <param id="0" name="Animation">&quot;Button_push&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Powrót do domyslnej animacji przycisku gdy zwolnimy LPM. Przechodzimy do Layout2</comment>
+            </sub-events>
+        </event-group>
+        <event-block sid="3142319809448652">
+            <conditions>
+                <condition id="3" name="On button released" sid="1609514555007852" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="5515332211088979" type="Button_Start">
+                    <param id="0" name="Animation">&quot;Button_relese&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1319456427791709" type="System">
+                    <param id="0" name="Layout">Levels</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

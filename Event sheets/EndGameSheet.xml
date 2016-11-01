@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EndGameSheet</name>
+    <events>
+        <variable constant="0" name="OverScore" sid="1735422851589178" static="0" type="number">0</variable>
+        <variable comment='DON&apos;T FORGET the trailing &quot;/&quot; !!!' constant="1" name="DOMAIN_SCORES" sid="767817115345523" static="0" type="text">http://matexozzo0707.net16.net/</variable>
+        <variable constant="0" name="EachX" sid="7111206207174244" static="0" type="number">0</variable>
+        <event-block sid="2542423607098638">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7707518007618114" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="5739339407741178" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetScores&quot;</param>
+                    <param id="1" name="URL">DOMAIN_SCORES &amp; &quot;getscores.php&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6597609714133793">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="8282083758242858" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Button_OK</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Post to URL" sid="767426375303998" type="AJAX">
+                    <param id="0" name="Tag">&quot;PostScore&quot;</param>
+                    <param id="1" name="URL">DOMAIN_SCORES &amp; &quot;savescores.php?name=&quot; &amp; TextBox_Name.Text &amp; &quot;&amp;score=&quot; &amp; OverScore</param>
+                    <param id="2" name="Data">&quot;&quot;</param>
+                    <param id="3" name="Method">&quot;POST&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6972814112231156" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2510550516372592">
+            <conditions>
+                <condition id="0" name="On completed" sid="3175121351153314" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetScores&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="6962831608384967" type="System">
+                    <param id="0" name="Group name">&quot;Do Array&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9421843761648459">
+            <conditions>
+                <condition id="0" name="On completed" sid="5035323443892585" type="AJAX">
+                    <param id="0" name="Tag">&quot;PostScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="4551511259542317" type="AJAX">
+                    <param id="0" name="Tag">&quot;GetScores&quot;</param>
+                    <param id="1" name="URL">DOMAIN_SCORES &amp; &quot;getscores.php&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="5211366650547043" title="Do Array">
+            <sub-events>
+                <event-block sid="7189629611787065">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="4544453292666285" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Set at X" sid="9488711351129144" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Value">tokenat(Ajax.LastData, Array.CurX, &quot;|&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5576319510237961">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="9732344022226416" type="System">
+                            <param id="0" name="Object">LB_Name_1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="6132793757157843" type="LB_Name_1">
+                            <param id="0" name="Text">Array.At(LB_Name_1.IID)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3717247969050267">
+                    <conditions />
+                    <actions>
+                        <action id="-12" name="Set group active" sid="2459639782031426" type="System">
+                            <param id="0" name="Group name">&quot;Do Array&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4375431011608651">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9446084085754232" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2209174851368741" type="LB_PlayerScore">
+                    <param id="0" name="Text">&quot;Your Score: &quot; &amp;Senzu_counter</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9314167989653703">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1823544029192753" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3085714507927348" type="System">
+                    <param id="0" name="Seconds">10</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="6488210940086083" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

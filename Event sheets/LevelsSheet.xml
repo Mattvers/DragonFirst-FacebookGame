@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelsSheet</name>
+    <events>
+        <variable constant="0" name="SCORRE" sid="2672209732537153" static="0" type="number">0</variable>
+        <event-group description="" sid="1705517362820414" title="Obsługa poziomów">
+            <sub-events>
+                <comment>Klikając LPM wybieramy Level1.</comment>
+                <event-block sid="5290426214166684">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="2313473109843047" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Level1_button</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5895788647964164" type="System">
+                            <param id="0" name="Layout">Level1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Wybranie Level2 jest możliwe gdy ukończymy Level1</comment>
+        <event-block sid="9752578644742864">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4105460082967157" type="System">
+                    <param id="0" name="Variable">Level1Complete</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="990676314553371" type="Lock" />
+            </actions>
+            <sub-events>
+                <event-block sid="6522823336666993">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="9712563379130448" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Level2_button</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7346781535857121" type="System">
+                            <param id="0" name="Layout">Level2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Wybranie Level3 jest możliwe gdy ukończymy Level1 oraz Level2.</comment>
+        <event-block sid="4746403125410464">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2215661315149818" type="System">
+                    <param id="0" name="Variable">Level1Complete</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9175954309599883" type="Lock" />
+            </actions>
+            <sub-events>
+                <event-block sid="4114007386713731">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="2384566624795751" type="System">
+                            <param id="0" name="Variable">Level2Complete</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="484197303109949" type="Lock_1" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9721277240125834">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="5020250790747235" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Level3_button</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="6869826159597974" type="System">
+                                    <param id="0" name="Layout">Level3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
